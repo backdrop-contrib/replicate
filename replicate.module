@@ -107,6 +107,14 @@ function replicate_clone_entity($entity_type, $entity) {
     $entity_info = entity_get_info($entity_type);
     $clone->{$entity_info['entity keys']['id']} = NULL;
 
+    // Reset UUID.
+    if (isset($entity_info['uuid']) && $entity_info['uuid'] == TRUE && !empty($entity_info['entity keys']['uuid'])) {
+      $clone->{$entity_info['entity keys']['uuid']} = NULL;
+      if (!empty($entity_info['entity keys']['revision uuid'])) {
+        $clone->{$entity_info['entity keys']['revision uuid']} = NULL;
+      }
+    }
+
     // Let other modules do special actions on each field.
     replicate_clone_fields($clone, $entity_type);
 
