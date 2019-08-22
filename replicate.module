@@ -119,7 +119,7 @@ function replicate_clone_entity($entity_type, $entity) {
     replicate_clone_fields($clone, $entity_type);
 
     // Let other modules do special actions on the global entity.
-    drupal_alter('replicate_entity', $clone, $entity_type, $entity);
+    backdrop_alter('replicate_entity', $clone, $entity_type, $entity);
   }
 
   return $clone;

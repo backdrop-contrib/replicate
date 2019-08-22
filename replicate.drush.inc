@@ -20,10 +20,8 @@ function replicate_drush_command() {
     'required-arguments' => 1,
     'aliases' => array('rep', 'replicate'),
     'examples' => array(
-      'drush replicate-drush-entity-by-ids node 1' =>
-        'Replicate node 1 using full command.',
-      'drush replicate node 1,2,3' =>
-        'Replicate nodes 1,2 and 3 using aliased command.',
+      'drush replicate-drush-entity-by-ids node 1' => 'Replicate node 1 using full command.',
+      'drush replicate node 1,2,3' => 'Replicate nodes 1,2 and 3 using aliased command.',
     ),
   );
 
@@ -49,7 +47,7 @@ function drush_replicate_drush_entity_by_ids($entity_type = NULL, $ids = NULL) {
   foreach ($original_ids as $original_id) {
     $entity_id = replicate_entity_by_id($entity_type, $original_id);
     if (!empty($entity_id)) {
-      drush_log(dt('@entity_type @entity_id is clone of @entity_type @original_id', array('@entity_type' => $entity_type, '@entity_id' => $entity_id, '@original_id' => (int)$original_id)), 'success');
+      drush_log(dt('@entity_type @entity_id is clone of @entity_type @original_id', array('@entity_type' => $entity_type, '@entity_id' => $entity_id, '@original_id' => (int) $original_id)), 'success');
     }
     else {
       drush_log(dt('Impossible to replicate @entity_type @original_id', array('@entity_type' => $entity_type, '@original_id' => check_plain($original_id))), 'error');

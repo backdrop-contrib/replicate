@@ -1,4 +1,5 @@
-core = "7.x"
+backdrop = 1.x
+type = module
 description = "Replicate provide an API to replicate (duplicate) entities. This modules also provide hooks to control exactly how parts of an entity are duplicated."
 name = "Replicate"
 package = "Entity"
