@@ -19,7 +19,7 @@
  * @see replicate_entity()
  */
 function replicate_entity_by_id($entity_type, $id) {
-  if (($original = entity_load_single($entity_type, $id)) !== FALSE) {
+  if (($original = entity_load($entity_type, $id)) !== FALSE) {
     return replicate_entity($entity_type, $original);
   }
 
@@ -41,7 +41,7 @@ function replicate_entity_by_id($entity_type, $id) {
 function replicate_entity($entity_type, $entity) {
   $clone = replicate_clone_entity($entity_type, $entity);
   if ($clone) {
-    entity_save($entity_type, $clone);
+    entity_plus_save($entity_type, $clone);
     list($entity_id) = entity_extract_ids($entity_type, $clone);
 
     if (isset($entity_id)) {
@@ -70,7 +70,7 @@ function replicate_entity($entity_type, $entity) {
  * @see replicate_clone_entity()
  */
 function replicate_clone_entity_by_id($entity_type, $id) {
-  if (($original = entity_load_single($entity_type, $id)) !== FALSE) {
+  if (($original = entity_load($entity_type, $id)) !== FALSE) {
     return replicate_clone_entity($entity_type, $original);
   }
 
@@ -163,7 +163,7 @@ function replicate_help($path, $arg) {
 function replicate_replicate_entity_node(&$entity) {
   $entity->tnid = NULL;
   $entity->vid = NULL;
-  $entity->created = NULL;
+  //$entity->created = NULL;
   $entity->changed = NULL;
   $entity->path = NULL;
   $entity->revision_timestamp = NULL;
