@@ -4,4 +4,4 @@ description = "Replicate provide an API to replicate (duplicate) entities. This 
 name = "Replicate"
 package = "Entity"
 
-dependencies[] = entity
+dependencies[] = entity_plus
