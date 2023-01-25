@@ -1,6 +1,6 @@
 # Replicate
 
-Provides an API to duplicate / clone an entity. 
+Provides an API to duplicate / clone an entity.
 
 Replicate provides a main cloning function, along with several hooks to control
 exactly how a field or entity is duplicated based on its type, add info after
@@ -23,7 +23,7 @@ replication control to custom fields or entities.
  - Use the `replicate_entity()` function to clone an entity and save it at the
    end of the process.
  - See the `replicate.api.php` file for detailed use of hooks functions.
- 
+
 More details may be found (or added) in the [Wiki](https://github.com/backdrop-contrib/replicate/issues)
 
 ## Issues
@@ -32,14 +32,15 @@ Bugs and Feature requests should be reported in the [Issue Queue](https://github
 
 ## Current Maintainers
 
-- [Laryn Kragt Bakker](https://github.com/laryn), [CEDC.org](https://CEDC.org) 
+- [Laryn Kragt Bakker](https://github.com/laryn)
 
 ## Credits
 
-- Ported to Backdrop by [Laryn Kragt Bakker](https://github.com/laryn), [CEDC.org](https://CEDC.org)
+- Ported to Backdrop by [Laryn Kragt Bakker](https://github.com/laryn)
+- Initial port was sponsored by [CEDC.org](https://CEDC.org)
 - Maintained for Drupal 7 by [jgalletta](https://www.drupal.org/u/jgalletta) and
-  [Vincent Bouchet](https://drupal.org/u/vbouchet).
-- Originally sponsored by Capgemini Drupal Factory.
+  [Vincent Bouchet](https://drupal.org/u/vbouchet)
+- Originally sponsored by Capgemini Drupal Factory
 
 ## License
 
